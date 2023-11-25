@@ -1,6 +1,7 @@
 import authImg from '/public/img/auth/auth.png';
 import NavLink from 'components/link/NavLink';
 import Footer from 'components/footer/FooterAuthDefault';
+
 function Default(props: { maincard: JSX.Element }) {
   const { maincard } = props;
   return (

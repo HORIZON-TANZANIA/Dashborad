@@ -152,6 +152,8 @@ module.exports = {
       lightPrimary: '#F4F7FE',
       blueSecondary: '#4318FF',
       brandLinear: '#868CFF',
+      primary: '#0C37B9',
+      
       gray: {
         50: '#F5F6FA',
         100: '#EEF0F6',
@@ -272,18 +274,7 @@ module.exports = {
         800: '#155e75',
         900: '#164e63',
       },
-      blue: {
-        50: '#eff6ff',
-        100: '#dbeafe',
-        200: '#bfdbfe',
-        300: '#93c5fd',
-        400: '#60a5fa',
-        500: '#3b82f6',
-        600: '#2152ff',
-        700: '#1d4ed8',
-        800: '#344e86',
-        900: '#00007d',
-      },
+     
       indigo: {
         50: '#eef2ff',
         100: '#e0e7ff',

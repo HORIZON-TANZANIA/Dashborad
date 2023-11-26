@@ -50,32 +50,15 @@ const Dashboard = () => {
 
       {/* Tables & Charts */}
 
-      <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2">
+        <div className="flex w-full justify-between">
+          <h1 className="my-9 text-2xl font-medium">Recent Orders</h1>
+          <p className=" text-[#545454] my-auto mr-5">SEE ALL</p>
+        </div>
         {/* Check Table */}
-        <div>
+        <div className='mt-2'>
           <CheckTable tableData={tableDataCheck} />
         </div>
-
-        {/* Traffic chart & Pie Chart */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <DailyTraffic />
-          <PieChartCard />
-        </div>
-
-        {/* Complex Table , Task & Calendar */}
-
-        <ComplexTable tableData={tableDataComplex} />
-
-        {/* Task chart & Calendar */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <TaskCard />
-          <div className="grid grid-cols-1 rounded-[20px]">
-            <MiniCalendar />
-          </div>
-        </div>
-      </div>
+    
     </div>
   );
 };

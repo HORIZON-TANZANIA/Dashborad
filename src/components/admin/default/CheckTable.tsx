@@ -8,6 +8,7 @@ import {
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  RowSelection,
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
@@ -109,11 +110,12 @@ function CheckTable(props: { tableData: any }) {
             {
               samples
               .map((row, ind) => {
-                const last = (row.length - 1 )=== ind;
-                console.log(last)
+                
                 return (
                   <tr >
-                    {row.map((cell) => {
+                    {row.map((cell,ind) => {
+                      const last = (row.length - 1 )=== ind;
+                
                       return (
                         <td
                           className={clsx(

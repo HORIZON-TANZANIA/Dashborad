@@ -15,66 +15,41 @@ import TaskCard from 'components/admin/default/TaskCard';
 import tableDataCheck from 'variables/data-tables/tableDataCheck';
 import tableDataComplex from 'variables/data-tables/tableDataComplex';
 
-const Dashboard = () => {
+const Customers= () => {
   return (
     <div>
-      <h1 className="my-9 text-2xl font-medium">Dashboard</h1>
+      <h1 className="my-9 text-2xl font-medium">Customers</h1>
 
       {/* Card widget */}
 
       <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={'Loyal Customers'}
-          subtitle={'5,896'}
+          title={'New Customers'}
+          subtitle={'200'}
         />
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
-          title={'Generated Revenue'}
-          subtitle={'32,000,000 TSh'}
+          title={'Total Customers'}
+          subtitle={'100,000'}
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={'Redeemed Rewards'}
-          subtitle={'89,878'}
+          title={'Total Upsell'}
+          subtitle={'1,000,000'}
         />
       </div>
 
-      {/* Charts */}
-      <h1 className="my-9 text-2xl font-medium">Marketplace</h1>
-
-      <div className="flex justify-between">
-        <TotalSpent />
-        <WeeklyRevenue />
-      </div>
-
-      {/* Tables & Charts */}
-
-      <div className="flex w-full justify-between">
-        <h1 className="my-9 text-2xl font-medium">Recent Orders</h1>
-        <p className=" my-auto mr-5 text-[#545454]">SEE ALL</p>
-      </div>
       {/* Check Table */}
-      <div className="mt-2">
+      <div className="mt-7">
         <CheckTable
           tableData={tableDataCheck}
+          title={['Loyal Customers', 'Total Spent', 'Phone Number']}
           samples={[
-            ['#956483232', 'Shawarma', 'Sept 30, 2023', 'Tsh7,000', 'Scanned'],
-            [
-              '#956483232',
-              'Kuku plus premium',
-              'Sept 01, 2023',
-              'Tsh7,000',
-              'POS',
-            ],
-            ['#956483232', 'Shawarma', 'Sept 30, 2023', 'Tsh7,000', 'Scanned'],
-            [
-              '#956483232',
-              'Kuku plus premium',
-              'Sept 01, 2023',
-              'Tsh7,000',
-              'POS',
-            ],
+            ['Elizabeth Elisha', '1,000,000 Tsh', '+25566780354'],
+            ['Francis Sanga', '5,000,000 Tsh', '+255673580354'],
+            ['Jordan Bohari', '2,000,000 Tsh', '+25577685454'],
+            ['Juma Mwanaidi', '4,000,000 Tsh', '+255673480354'],
           ]}
         />
       </div>
@@ -82,4 +57,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Customers;

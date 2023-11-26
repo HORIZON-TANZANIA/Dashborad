@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiFillPieChart } from 'react-icons/ai';
 
 // Admin Imports
 
@@ -10,18 +11,20 @@ import {
   MdPerson,
   MdLock,
 } from 'react-icons/md';
+import { BsFileBarGraphFill } from 'react-icons/bs';
+
 
 const routes = [
   {
     name: 'Dashboard',
     layout: '/admin',
     path: 'default',
-    icon: <MdHome className="h-6 w-6" />,
+    icon: <AiFillPieChart className="h-6 w-6" />,
   },
   {
     name: 'Customers',
     layout: '/admin',
-    path: 'nft-marketplace',
+    path: 'customers',
     icon: <MdOutlineShoppingCart className="h-6 w-6" />,
 
     secondary: true,
@@ -29,7 +32,7 @@ const routes = [
   {
     name: 'Rewards',
     layout: '/admin',
-    icon: <MdBarChart className="h-6 w-6" />,
+    icon: <BsFileBarGraphFill className="h-6 w-6" />,
     path: 'data-tables',
   },
   {

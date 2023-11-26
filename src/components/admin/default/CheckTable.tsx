@@ -19,10 +19,11 @@ type RowObj = {
   progress: string;
   quantity: number;
   date: string;
+
 };
 
-function CheckTable(props: { tableData: any }) {
-  const { tableData } = props;
+function CheckTable(props: { tableData: any,samples:string[][], title?:string[] }) {
+  const { tableData , samples, title} = props;
   const [sorting, setSorting] = React.useState<SortingState>([]);
   let defaultData = tableData;
   const columns = [
@@ -94,17 +95,26 @@ function CheckTable(props: { tableData: any }) {
     getSortedRowModel: getSortedRowModel(),
     debugTable: true,
   });
-  const samples = [
-    ['#956483232', 'Shawarma', 'Sept 30, 2023', 'Tsh7,000', 'Scanned'],
-    ['#956483232', 'Kuku plus premium', 'Sept 01, 2023', 'Tsh7,000', 'POS'],
-    ['#956483232', 'Shawarma', 'Sept 30, 2023', 'Tsh7,000', 'Scanned'],
-    ['#956483232', 'Kuku plus premium', 'Sept 01, 2023', 'Tsh7,000', 'POS'],
-  ];
+
   return (
     
     
       <div className=" overflow-x-scroll xl:overflow-x-hidden">
         <table className="w-full">
+          {title && <thead>
+            <tr className="text-left">
+              {title.map((head, ind) => (
+                <th
+                  className={clsx(
+                    'min-w-[150px] border-white/0 py-3  pr-4',
+            
+                  )}
+                >
+                  {head}
+                </th>
+              ))}
+            </tr>
+          </thead>}
         
           <tbody>
             {
@@ -114,7 +124,7 @@ function CheckTable(props: { tableData: any }) {
                 return (
                   <tr >
                     {row.map((cell,ind) => {
-                      const last = (row.length - 1 )=== ind;
+                      const last =!title && (row.length - 1 )=== ind;
                 
                       return (
                         <td

@@ -27,7 +27,7 @@ const routes = [
     secondary: true,
   },
   {
-    name: 'Data Tables',
+    name: 'Rewards',
     layout: '/admin',
     icon: <MdBarChart className="h-6 w-6" />,
     path: 'data-tables',

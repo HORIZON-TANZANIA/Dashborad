@@ -16,14 +16,19 @@ function SignInDefault() {
     <div className="flex h-full w-full items-center justify-center px-2 md:mx-0 md:px-0 ">
       {/* Sign in section */}
       <div className=" w-full max-w-full flex-col items-center md:pl-4 lg:pl-0 xl:max-w-[420px]">
-        <h3 className="mb-2.5 text-2xl font-semibold text-navy-700 dark:text-white">
+        <h3 className="mb-2.5 mb-3 text-2xl font-semibold text-navy-700 dark:text-white">
           Sign Up to your Account
         </h3>
-       {/* Restaurant Name */}
+        {/* Restaurant Name */}
         <div className="relative my-3">
-          <MdOutlineEmail className="absolute left-3 top-[10px] h-7 w-7 text-gray-400" />
+          <FaRegUser className="absolute left-3 top-[10px] h-7 w-7 text-gray-400" />
 
-          <Input placeholder="Restaurant's Name" variant="search" id="name" type="text" />
+          <Input
+            placeholder="Restaurant's Name"
+            variant="search"
+            id="name"
+            type="text"
+          />
         </div>
 
         {/* Email */}
@@ -59,25 +64,21 @@ function SignInDefault() {
         <div className="mb-4 flex items-center justify-between px-2">
           <div className="mt-2 flex items-center">
             <Checkbox />
-            <p className="ml-2 text-sm font-medium text-navy-700 dark:text-white">
-              Remember me?
+            <p className="ml-3 text-sm font-medium text-navy-700 dark:text-white">
+              By creating an account means you agree to the{' '}
+              <span className="font-bold">Terms & Conditions</span> and our {' '}
+              <span className="font-bold">Privacy Policy</span>
             </p>
           </div>
-          <a
-            className="text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
-            href=" "
-          >
-            Forgot Password?
-          </a>
         </div>
         <button className="linear my-3 w-full rounded-xl bg-brand-500 py-3 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200">
-          Sign In
+          Sign Up
         </button>
         <div className="my-6 flex items-center  gap-3">
           <div className="h-px w-full bg-gray-200 dark:!bg-navy-700" />
           <p className="w-full text-center text-sm text-gray-600">
             {' '}
-            Or sign in with{' '}
+            Or sign up with{' '}
           </p>
           <div className="h-px w-full bg-gray-200 dark:!bg-navy-700" />
         </div>
@@ -101,13 +102,13 @@ function SignInDefault() {
         </div>
         <div className="mt-4 text-center">
           <span className="text-sm font-medium text-navy-700 dark:text-gray-500">
-            Dont have an account?
+            Already have an account?
           </span>
           <a
-            href="/auth/sign-up/default"
+            href="/auth/sign-in"
             className="ml-1 text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
           >
-            Sign Up
+            Log In
           </a>
         </div>
       </div>

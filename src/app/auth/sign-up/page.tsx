@@ -10,6 +10,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
 import { FaRegUser } from 'react-icons/fa6';
 import { MdOutlineEmail } from 'react-icons/md';
+import { fakeLoading } from 'utils/libs';
 function SignInDefault() {
   const [showPassword, setShowPassword] = useState(true);
   return (
@@ -71,7 +72,9 @@ function SignInDefault() {
             </p>
           </div>
         </div>
-        <button className="linear my-3 w-full rounded-xl bg-brand-500 py-3 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200">
+        <button className="linear my-3 w-full rounded-xl bg-brand-500 py-3 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200" onClick={()=>{
+          fakeLoading('/admin/default', 2000)
+        }}>
           Sign Up
         </button>
         <div className="my-6 flex items-center  gap-3">

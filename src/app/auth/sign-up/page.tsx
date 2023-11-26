@@ -8,7 +8,7 @@ import Checkbox from 'components/checkbox';
 import Input from 'components/ui/Input';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
-
+import { FaRegUser } from 'react-icons/fa6';
 import { MdOutlineEmail } from 'react-icons/md';
 function SignInDefault() {
   const [showPassword, setShowPassword] = useState(true);
@@ -17,11 +17,14 @@ function SignInDefault() {
       {/* Sign in section */}
       <div className=" w-full max-w-full flex-col items-center md:pl-4 lg:pl-0 xl:max-w-[420px]">
         <h3 className="mb-2.5 text-2xl font-semibold text-navy-700 dark:text-white">
-          Sign In to your Account
+          Sign Up to your Account
         </h3>
-        <p className="mb-5 ml-1 text-sm text-gray-600">
-          Welcome back! please enter your detail
-        </p>
+       {/* Restaurant Name */}
+        <div className="relative my-3">
+          <MdOutlineEmail className="absolute left-3 top-[10px] h-7 w-7 text-gray-400" />
+
+          <Input placeholder="Restaurant's Name" variant="search" id="name" type="text" />
+        </div>
 
         {/* Email */}
         <div className="relative my-3">
@@ -89,7 +92,7 @@ function SignInDefault() {
           </div>
           <div className="mb-6 flex  h-[50px] w-48 items-center justify-center gap-2 rounded-xl border-2 border-[#E2E8F0] bg-white hover:cursor-pointer dark:bg-navy-800 dark:text-white">
             <div className="rounded-full text-xl">
-              <RiFacebookCircleFill  className='text-primary'/>
+              <RiFacebookCircleFill className="text-primary" />
             </div>
             <p className="text-sm font-medium text-navy-700 dark:text-white">
               Facebook
@@ -101,7 +104,7 @@ function SignInDefault() {
             Dont have an account?
           </span>
           <a
-            href="/auth/sign-up"
+            href="/auth/sign-up/default"
             className="ml-1 text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
           >
             Sign Up

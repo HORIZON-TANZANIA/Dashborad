@@ -8,19 +8,22 @@ import {
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  RowSelection,
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
+import clsx from "clsx";
 
 type RowObj = {
   name: [string, boolean];
   progress: string;
   quantity: number;
   date: string;
+
 };
 
-function CheckTable(props: { tableData: any }) {
-  const { tableData } = props;
+function CheckTable(props: { tableData: any,samples:string[][], title?:string[] }) {
+  const { tableData , samples, title} = props;
   const [sorting, setSorting] = React.useState<SortingState>([]);
   let defaultData = tableData;
   const columns = [
@@ -92,62 +95,45 @@ function CheckTable(props: { tableData: any }) {
     getSortedRowModel: getSortedRowModel(),
     debugTable: true,
   });
+
   return (
-    <Card extra={"w-full h-full sm:overflow-auto px-6"}>
-      <header className="relative flex items-center justify-between pt-4">
-        <div className="text-xl font-bold text-navy-700 dark:text-white">
-          Check Table
-        </div>
-
-        <CardMenu />
-      </header>
-
-      <div className="mt-8 overflow-x-scroll xl:overflow-x-hidden">
+    
+    
+      <div className=" overflow-x-scroll xl:overflow-x-hidden">
         <table className="w-full">
-          <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id} className="!border-px !border-gray-400">
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <th
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      onClick={header.column.getToggleSortingHandler()}
-                      className="cursor-pointer border-b-[1px] border-gray-200 pt-4 pb-2 pr-4 text-start"
-                    >
-                      <div className="items-center justify-between text-xs text-gray-200">
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                        {{
-                          asc: "",
-                          desc: "",
-                        }[header.column.getIsSorted() as string] ?? null}
-                      </div>
-                    </th>
-                  );
-                })}
-              </tr>
-            ))}
-          </thead>
+          {title && <thead>
+            <tr className="text-left">
+              {title.map((head, ind) => (
+                <th
+                  className={clsx(
+                    'min-w-[150px] border-white/0 py-3  pr-4',
+            
+                  )}
+                >
+                  {head}
+                </th>
+              ))}
+            </tr>
+          </thead>}
+        
           <tbody>
-            {table
-              .getRowModel()
-              .rows.slice(0, 5)
-              .map((row) => {
+            {
+              samples
+              .map((row, ind) => {
+                
                 return (
-                  <tr key={row.id}>
-                    {row.getVisibleCells().map((cell) => {
+                  <tr >
+                    {row.map((cell,ind) => {
+                      const last =!title && (row.length - 1 )=== ind;
+                
                       return (
                         <td
-                          key={cell.id}
-                          className="min-w-[150px] border-white/0 py-3  pr-4"
-                        >
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext()
+                          className={clsx(
+                            'min-w-[150px] border-white/0 py-3  pr-4',
+                            last && 'text-[#499C08]',
                           )}
+                        >
+                          {cell}
                         </td>
                       );
                     })}
@@ -157,7 +143,7 @@ function CheckTable(props: { tableData: any }) {
           </tbody>
         </table>
       </div>
-    </Card>
+   
   );
 }
 

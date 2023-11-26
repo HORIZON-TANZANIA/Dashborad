@@ -13,6 +13,7 @@ import { Portal } from '@chakra-ui/portal';
 import Navbar from 'components/navbar';
 import Sidebar from 'components/sidebar';
 import Footer from 'components/footer/Footer';
+import Logo from 'components/Logo';
 
 export default function Admin({ children }: { children: React.ReactNode }) {
   // states and functions
@@ -31,11 +32,11 @@ export default function Admin({ children }: { children: React.ReactNode }) {
         >
           {/* Routes */}
           <div>
-            <Navbar
+            {/* <Navbar
               onOpenSidenav={() => setOpen(!open)}
               brandText={getActiveRoute(routes, pathname)}
               secondary={getActiveNavbar(routes, pathname)}
-            />
+            /> */}
             <div className="mx-auto min-h-screen p-2 !pt-[10px] md:p-2">
               {children}
             </div>
@@ -45,6 +46,7 @@ export default function Admin({ children }: { children: React.ReactNode }) {
           </div>
         </main>
       </div>
+      <Logo isBlue={true}/>
     </div>
   );
 }

@@ -18,6 +18,8 @@ import tableDataComplex from 'variables/data-tables/tableDataComplex';
 const Dashboard = () => {
   return (
     <div>
+      <h1 className="my-9 text-2xl font-medium">Dashboard</h1>
+
       {/* Card widget */}
 
       <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
@@ -36,12 +38,12 @@ const Dashboard = () => {
           title={'Redeemed Rewards'}
           subtitle={'89,878'}
         />
-    
       </div>
 
       {/* Charts */}
+      <h1 className="my-9 text-2xl font-medium">Marketplace</h1>
 
-      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="flex justify-between">
         <TotalSpent />
         <WeeklyRevenue />
       </div>

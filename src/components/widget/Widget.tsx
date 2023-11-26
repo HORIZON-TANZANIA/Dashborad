@@ -7,7 +7,7 @@ const Widget = (props: {
 }) => {
   const { icon, title, subtitle } = props;
   return (
-    <Card extra="!flex-row flex-grow items-center rounded-[20px]">
+    <Card extra="!flex-row flex-grow items-center rounded-[20px]" isBgBlue={true}>
       <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
         <div className="rounded-full  p-3 dark:bg-navy-700" >
          
